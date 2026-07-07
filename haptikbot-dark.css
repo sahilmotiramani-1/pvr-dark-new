@@ -27,7 +27,7 @@ body,
 
 /* ── WIDGET SHELL (inner) ─────────────────────────────────── */
 .extended-view.active {
-    background: linear-gradient(180deg, #1c1c1c 0%, #141414 100%) !important;
+    /* background: linear-gradient(180deg, #1c1c1c 0%, #141414 100%) !important; */
     border-radius: 20px !important;
     overflow: hidden !important;
     backdrop-filter: blur(12px) !important;
@@ -421,7 +421,7 @@ iframe#haptik-xdk-main-view.xdk-iframe {
   color: #0A0A0A !important;
   border-radius: 10px !important;
   border: 1px solid #1F1F1F !important;
-  box-shadow: 0 4px 12px rgba(248, 168, 37, 0.25) !important;
+  /* box-shadow: 0 4px 12px rgba(248, 168, 37, 0.25) !important; */
 }
 .hsl-actionable.message-section-message-button-actionable:hover,
 .hsl-actionable.message-section-message-button-actionable:active {
@@ -448,7 +448,7 @@ iframe#haptik-xdk-main-view.xdk-iframe {
 .hsl-actionable.undefined {
   background-color: #161616 !important;
   color: #ffffff !important;
-  border: 1px solid #1F1F1F !important;
+  /* border: 1px solid #1F1F1F !important; */
 }
 
 .hsl-carousel::after {
@@ -468,7 +468,9 @@ iframe#haptik-xdk-main-view.xdk-iframe {
 .hsl-button-text.message-section-message-button-text.v2:hover {
   color: #fff !important;
 }
-
+.hsl-button{
+  border:none !important;
+}
 /* ── FORM CARD ────────────────────────────────────────────── */
 .hsl.form {
   background: #1A1A1A !important;
@@ -623,10 +625,11 @@ iframe#haptik-xdk-main-view.xdk-iframe {
   font-family: 'Inter', sans-serif !important;
   background-color: #FFBD51 !important;
   color: #0A0A0A !important;
-  border: 2.5px solid #1F1F1F !important;
+  /* border: 2.5px solid #1F1F1F !important; */
   border-radius: 10px !important;
-  box-shadow: 0 4px 12px rgba(248, 168, 37, 0.25) !important;
+  /* box-shadow: 0 4px 12px rgba(248, 168, 37, 0.25) !important; */
   transition: background-color 0.2s ease !important;
+  border-top:none !important;
 }
 
 .hsl.form .hsl-form-button.submitted {
@@ -835,7 +838,7 @@ iframe#haptik-xdk-main-view.xdk-iframe {
     background-color: #1f1f1f !important;
     color: #FFFFFF !important;
     border-color: #1F1F1F !important;
-    border: 1px solid #1F1F1F !important;
+    /* border: 1px solid #1F1F1F !important; */
     border-radius: 10px !important;
 }
 
@@ -1038,8 +1041,12 @@ div.hsl-form-element {
   margin-right: 8px !important;
   margin-bottom: 3px !important;
 }
-.hsl-actionables.message-section-message-button-actionables{
-  margin: 8px 12px 12px 12px !important;
+
+.hsl-actionables.message-section-message-button-actionables {
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+    margin-bottom: 3px !important;
+    margin-top: 10px !important;
 }
 .hsl-form-element-icon-s3 {
     display: none;
@@ -1097,4 +1104,7 @@ div.hsl-form-element {
       margin-left: 0px !important;
       margin-bottom: 0px !important;
       height: calc(100vh - 0px) !important;
+}
+.hsl-actionable.undefined {
+  border:none !important;
 }
