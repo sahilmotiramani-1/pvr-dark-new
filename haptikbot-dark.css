@@ -474,9 +474,10 @@ iframe#haptik-xdk-main-view.xdk-iframe {
 /* ── FORM CARD ────────────────────────────────────────────── */
 .hsl.form {
   background: #1A1A1A !important;
-  border: 1.8px solid rgba(239,162,73,.2) !important;
+  /* border: 1.8px solid rgba(239,162,73,.2) !important; */
   border-radius: 10px !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,.35) !important;
+  /* box-shadow: 0 8px 24px rgba(0,0,0,.35) !important; */
+  border: none !important;
 }
 
 .hsl.form + .message-timestamp.left {
