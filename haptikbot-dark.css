@@ -40,10 +40,10 @@ body,
 iframe#haptik-xdk-main-view.xdk-iframe {
   border-radius: 20px !important;
   overflow: hidden !important;
-  box-shadow:
+  /* box-shadow:
       0 0 30px rgba(255, 189, 81, 0.20),
       0 0 70px rgba(255, 189, 81, 0.14),
-      0 0 130px rgba(248, 168, 37, 0.08) !important;
+      0 0 130px rgba(248, 168, 37, 0.08) !important; */
 }
 
 [data-testid="headerSubtitleText"]{
@@ -131,15 +131,15 @@ iframe#haptik-xdk-main-view.xdk-iframe {
 [class*="message-section"]:not([class*="row"]),
 [class*="chat-background"] {
   /* background-color: #111111 !important; */
-  background-image:
+  /* background-image:
     radial-gradient(ellipse 80% 40% at 50% 0%, rgba(255, 189, 81, 0.04) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 30% at 80% 80%, rgba(248, 168, 37, 0.03) 0%, transparent 60%) !important;
+    radial-gradient(ellipse 60% 30% at 80% 80%, rgba(248, 168, 37, 0.03) 0%, transparent 60%) !important; */
     box-shadow: none !important;
 }
-.hsl-button-text.message-section-message-button-text.v2 {
+/* .hsl-button-text.message-section-message-button-text.v2 {
   background-color: #1F1F1F !important;
 
-}
+} */
 .timeline-message-text{
   background-color: #1F1F1F !important;
   
@@ -370,13 +370,13 @@ iframe#haptik-xdk-main-view.xdk-iframe {
 }
 .hsl-carousel-element-image {
     width: 100% !important;
-    height: auto !important;
+    height: 180px !important;
     flex-shrink: 0 !important;
 }
 
-.hsl-carousel-element-image img {
+.hsl-carousel-element-  image img {
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
     display: block !important;
 }
 
@@ -384,7 +384,7 @@ iframe#haptik-xdk-main-view.xdk-iframe {
     background-color: #1F1F1F !important;
     color: #FFFFFF !important;
 
-    padding: 8px !important;
+    padding: 12px !important;
 
     display: flex !important;
     flex-direction: column !important;
@@ -635,7 +635,7 @@ iframe#haptik-xdk-main-view.xdk-iframe {
 
 .hsl.form .hsl-form-button.submitted {
   background-color: rgba(255, 189, 81, 0.4) !important;
-  color: #858585 !important;
+  color: rgba(10, 10, 10, 0.5) !important;
   box-shadow: none !important;
   cursor: not-allowed !important;
   pointer-events: none !important;
@@ -885,45 +885,72 @@ iframe#haptik-xdk-main-view.xdk-iframe {
   text-decoration: underline !important;
   text-underline-offset: 2px !important;
 }
+
+/* ============================================================
+   ACTIONABLE BUTTONS (Book / Trailer style pairs)
+   Default (non-carousel) styling: flat dark gray pair
+   Carousel-specific styling: gold first child + text-only second child
+   ============================================================ */
+
+/* --- Default / non-carousel actionables --- */
+.hsl-actionables .hsl-actionable {
+    background-color: #1f1f1f !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.hsl-actionables .hsl-actionable .hsl-actionable-text.v2 {
+    color: #ffffff !important;
+}
+
+.hsl-actionables .hsl-actionable.disabled {
+    background-color: #1f1f1f !important;
+}
+
+.hsl-actionables .hsl-actionable.disabled .hsl-actionable-text.v2 {
+    color: #858585 !important;
+}
+
+/* --- Carousel-only actionables (first child gold / second child text-link) --- */
 /* Book button */
-.hsl-actionables .hsl-actionable:first-child {
+.hsl-carousel-element .hsl-actionables .hsl-actionable:first-child {
     background-color: #FFBD51 !important;
     border-radius: 10px !important;
 }
 
-.hsl-actionables .hsl-actionable:first-child .hsl-actionable-text.v2 {
+.hsl-carousel-element .hsl-actionables .hsl-actionable:first-child .hsl-actionable-text.v2 {
     color: #161616 !important;
 }
 
 /* Trailer button */
-.hsl-actionables .hsl-actionable:nth-child(2) {
+.hsl-carousel-element .hsl-actionables .hsl-actionable:nth-child(2) {
     background: transparent !important;
     box-shadow: none !important;
 }
 
-.hsl-actionables .hsl-actionable:nth-child(2) .hsl-actionable-text.v2 {
+.hsl-carousel-element .hsl-actionables .hsl-actionable:nth-child(2) .hsl-actionable-text.v2 {
     color: #ffbd51   !important;
 }
 /* Disabled Book */
-.hsl-actionable:first-child.disabled,
-.hsl-actionable.message-section-message-button-actionable:first-child.disabled {
+.hsl-carousel-element .hsl-actionable:first-child.disabled,
+.hsl-carousel-element .hsl-actionable.message-section-message-button-actionable:first-child.disabled {
     background: rgba(255, 189, 81, 0.4) !important;
     border: none !important;
 }
 
-.hsl-actionable:first-child.disabled .hsl-actionable-text.v2,
-.hsl-actionable.message-section-message-button-actionable:first-child.disabled .hsl-actionable-text.v2 {
+.hsl-carousel-element .hsl-actionable:first-child.disabled .hsl-actionable-text.v2,
+.hsl-carousel-element .hsl-actionable.message-section-message-button-actionable:first-child.disabled .hsl-actionable-text.v2 {
     color: rgba(10, 10, 10, 0.5) !important;
 }
 
 /* Disabled Trailer */
-.hsl-actionables .hsl-actionable:nth-child(2).disabled {
+.hsl-carousel-element .hsl-actionables .hsl-actionable:nth-child(2).disabled {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
 }
 
-.hsl-actionables .hsl-actionable:nth-child(2).disabled .hsl-actionable-text.v2 {
+.hsl-carousel-element .hsl-actionables .hsl-actionable:nth-child(2).disabled .hsl-actionable-text.v2 {
     color: rgba(255, 189, 81, 0.4) !important;
 }
 rect#Rectangle{
@@ -1111,4 +1138,37 @@ div.hsl-form-element {
 }
 .hsl-actionable.undefined {
   border:none !important;
+}
+div#message-section-area {
+    background: #161616 !important;
+}
+.location-picker-search-input {
+    background-color: #1f1f1f !important;
+    border: 1px solid #858585 !important;
+}
+.location-picker-search {
+    background-color: #161616 !important;
+}
+.location-picker-footer-address-title.v2 {
+    color: #ffffff !important;
+}
+.location-picker-footer-address-text.v2 {
+  /* background-color: #FFBD51; */
+    color: #858585 !important;
+}
+button.location-picker-footer-button.v2 {
+    color: #161616 !important;
+    font-family: 'Inter', sans-serif !important;
+    background-color: #FFBD51 !important;
+    font-weight: 600 !important;
+}
+.location-picker-footer {
+    background-color: #161616 !important;
+}
+.hsl-search-dropdown-option {
+  color: #ffffff !important;
+}
+.hsl-search-dropdown-option:hover, .hsl-search-dropdown-option:active {
+    background-color: #ffbd51 !important;
+    color: #161616 !important;
 }
